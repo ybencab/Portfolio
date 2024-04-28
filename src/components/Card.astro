@@ -1,0 +1,17 @@
+---
+const { postTitle, postDescription, postURL, postTags } = Astro.props;
+---
+
+<div class="flex flex-col bg-gray-700 p-4 rounded-lg border border-gray-600 mb-2">
+  <h2 class="font-medium text-lg text-gray-200 font-semibold">{postTitle}</h2>
+  <p class="mt-2 text-blue-400">{postDescription}</p>
+  <div class="flex flex-row items-center justify-between mt-1">
+    <p class="text-gray-400">Tags: {postTags[0]}, {postTags[1]}</p>
+    <button class="flex bg-blue-600 hover:bg-blue-800 p-1.5 ease-out duration-150 rounded-lg text-gray-200 font-semibold">
+      <a href={postURL}><span class="mr-2">Ir al post</span></a>
+      <svg class="w-6 h-6" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" stroke-linejoin="round" stroke-linecap="round"></path>
+      </svg>
+    </button>
+  </div>
+</div>

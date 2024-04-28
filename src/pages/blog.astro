@@ -1,8 +1,11 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import Card from "../components/Card.astro";
 
+const allPosts = await Astro.glob("./posts/*.md")
 const pageTitle = "Blog"
 ---
 
 <BaseLayout pageTitle={pageTitle}>
+  {allPosts.map((post) => <Card postTitle={post.frontmatter.title} postDescription={post.frontmatter.description} postURL={`./posts/${post.frontmatter.url}`} postTags={post.frontmatter.tags} />)}
 </BaseLayout>
